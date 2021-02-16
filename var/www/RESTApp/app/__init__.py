@@ -6,4 +6,4 @@ FlaskAppInstance = Flask(__name__)
 from app.api.views import HelloWorld
 
 apiInstance= Api(FlaskAppInstance)
-apiInstance.add_resource(HelloWorld,'/helloworld')
+apiInstance.add_resource(HelloWorld, '/helloworld/<string:name>')
