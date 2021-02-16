@@ -1,8 +1,6 @@
 from flask import Flask
 from flask_restful import  Api, Resource
 
-FlaskAppInstance = Flask(__name__)
-apiInstance= Api(FlaskAppInstance)
 
 # HelloWorld class is inherited from Resource
 class HelloWorld(Resource):
