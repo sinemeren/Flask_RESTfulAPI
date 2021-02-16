@@ -5,5 +5,5 @@ ENV STATIC_PATH var/www/app/static
 COPY ./requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
 EXPOSE 5000
-CMD [ "python3", "app/views.py" ]
+CMD [ "python3", "run.py" ]
 
