@@ -3,7 +3,7 @@ from flask_restful import Api
 
 FlaskAppInstance = Flask(__name__)
 
-from app.api.views import HelloWorld
+from app.api.views import Video
 
 apiInstance= Api(FlaskAppInstance)
-apiInstance.add_resource(HelloWorld, '/helloworld/<string:name>')
+apiInstance.add_resource(Video, '/video/<int:video_id>')

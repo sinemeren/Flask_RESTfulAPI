@@ -1,14 +1,24 @@
 from flask import Flask
-from flask_restful import  Api, Resource
+from flask_restful import  Api, Resource, reqparse
 
+# new request parser object, automatically parse the request is being sent and make sure that it fits the
+# kind of guidelines and has the correct information in it 
+video_put_args = reqparse.RequestParser()
 
+video_put_args.add_argument("name", type = str, help = "Name of the video")
+video_put_args.add_argument("views", type = int, help = "Views of the video")
+video_put_args.add_argument("likes", type = int, help = "Likes on the video")
 
-names = {"tim": {"age": 19, "gender": "male"},
-         "bill": {"age": 70, "gender": "male"}}
+videos = {}
+
 
 # HelloWorld class is inherited from Resource
-class HelloWorld(Resource):
+class Video(Resource):
 
-    def get(self, name):
-        return names [name]
+    def get(self, video_id):
+        return videos[video_id]
+
+    def put(self, video_id):
+        args = video_put_args.parse_args()
+        return {video_id: args}
 
