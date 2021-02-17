@@ -20,5 +20,6 @@ class Video(Resource):
 
     def put(self, video_id):
         args = video_put_args.parse_args()
-        return {video_id: args}
+        videos[video_id] = args
+        return videos[video_id]
 
