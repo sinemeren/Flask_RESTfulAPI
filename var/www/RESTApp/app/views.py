@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import  Api, Resource, reqparse, abort, marshal_with, fields
-from app import db, apiInstance, VideoModel
+from app import db, apiInstance
+from .models import VideoModel
 
 # new request parser object, automatically parse the request is being sent and make sure that it fits the
 # kind of guidelines and has the correct information in it 
