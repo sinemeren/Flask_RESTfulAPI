@@ -8,9 +8,9 @@ FlaskAppInstance = Flask(__name__)
 #FlaskAppInstance.config.from_pyfile('config/development.cfg')
 FlaskAppInstance.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(FlaskAppInstance)
-#db.create_all()
-
-#from app.api.views import Video
-
 apiInstance= Api(FlaskAppInstance)
+
+db.create_all()
+from app import views 
+
 
